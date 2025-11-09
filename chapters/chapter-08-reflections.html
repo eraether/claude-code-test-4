@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 08: Reflections - Picard Anomaly Chronicles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #e0e0ff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(10, 10, 26, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        .chapter-number {
+            font-size: 0.9rem;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #4a9eff, #ffd700, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #4a9eff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        #reflectionCanvas {
+            width: 100%;
+            height: 60vh;
+            display: block;
+            background: radial-gradient(ellipse at center, rgba(26, 10, 46, 0.3) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem 4rem;
+            line-height: 1.8;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            color: #d0d0e0;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        .dialogue {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid rgba(74, 158, 255, 0.3);
+            font-style: italic;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #ffd700;
+            font-style: normal;
+        }
+
+        .location-header {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #8a2be2;
+            font-weight: bold;
+            margin: 3rem 0 1rem 0;
+            letter-spacing: 2px;
+        }
+
+        .time-header {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9090b0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .section-break {
+            text-align: center;
+            margin: 2rem 0;
+            color: #4a9eff;
+            font-size: 1.5rem;
+        }
+
+        .meditation {
+            background: rgba(74, 158, 255, 0.05);
+            padding: 2rem;
+            margin: 2rem 0;
+            border-left: 4px solid rgba(74, 158, 255, 0.3);
+            font-style: italic;
+            color: #c0d0e0;
+        }
+
+        .epilogue-text {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #ffd700;
+            margin: 3rem 0;
+            font-style: italic;
+            line-height: 2;
+        }
+
+        .final-quote {
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid rgba(138, 43, 226, 0.3);
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 700px;
+            text-align: center;
+            border-radius: 8px;
+        }
+
+        .final-quote p {
+            font-size: 1.15rem;
+            color: #e0e0ff;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .final-quote .attribution {
+            font-size: 0.95rem;
+            color: #9090b0;
+            font-style: normal;
+            margin-top: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-link">← Back to Chronicles</a>
+        <div class="chapter-number">CHAPTER 08</div>
+        <h1>Reflections</h1>
+    </div>
+
+    <canvas id="reflectionCanvas"></canvas>
+
+    <div class="content">
+        <div class="location-header">USS ENTERPRISE-D - CAPTAIN'S QUARTERS</div>
+        <div class="time-header">Three days later</div>
+
+        <p class="story-text">
+            Picard stood before the window in his quarters, a cup of Earl Grey growing cold in his
+            hands. He'd been standing there for nearly an hour, watching the stars stream by at warp.
+            They were returning to Federation space, their mission complete. The reports had been filed.
+            Starfleet Command had been briefed on everything—the entity, the choice, the loop.
+        </p>
+
+        <p class="story-text">
+            Admiral Nechayev had called it "an unfortunate but necessary action." She'd commended him
+            for making the difficult choice. He'd ended the transmission without responding.
+        </p>
+
+        <p class="story-text">
+            The door chimed. He didn't turn.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Come."
+        </div>
+
+        <p class="story-text">
+            Guinan entered, carrying a bottle of Saurian brandy and two glasses. She poured in silence,
+            handed him one, and stood beside him at the window.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Guinan:</span> "You saved billions of lives."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "By killing gods."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Guinan:</span> "By completing a loop that made warriors into saviors.
+            You could look at it that way."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "I could. But the Bajorans won't. They lost their gods,
+            Guinan. And I took them."
+        </div>
+
+        <p class="story-text">
+            Guinan sipped her brandy thoughtfully. After a moment, she spoke.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Guinan:</span> "My people have a saying: 'The universe is a circle
+            pretending to be a line.' We think time flows in one direction, cause before effect. But
+            maybe that's just how we experience it because we're trapped inside the flow."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "The Prophets weren't trapped. They saw the whole circle.
+            And they still chose to save us, knowing what it would cost them."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Guinan:</span> "Which makes them exactly what they claimed to be. Gods
+            don't just have power, Jean-Luc. They accept sacrifice. The Prophets accepted theirs across
+            30,000 years. You accepted yours in a single moment."
+        </div>
+
+        <p class="story-text">
+            Picard finally turned to look at her.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Then why does it feel like the wrong choice?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Guinan:</span> "Because you're human. And humans are blessed—or cursed—
+            with the ability to second-guess themselves even when they're right. The Prophets knew you'd
+            make this choice. They counted on it. The loop required your free will to close it."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Free will and predestination. The same thing from
+            different perspectives."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Guinan:</span> "Exactly. You chose freely. And your choice was always
+            going to happen. Both are true."
+        </div>
+
+        <p class="story-text">
+            They stood in silence, watching the stars.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">DEEP SPACE NINE - THE PROMENADE</div>
+        <div class="time-header">One week later</div>
+
+        <p class="story-text">
+            Benjamin Sisko walked through the Promenade, and everywhere he went, conversations stopped.
+            Bajorans who had once greeted him warmly now looked away. Some with anger. Some with something
+            worse—pity.
+        </p>
+
+        <p class="story-text">
+            He was no longer the Emissary. The Prophets were gone. The part of him that had existed outside
+            linear time, that had touched the divine—severed. He was just Benjamin Sisko now. Just a man.
+        </p>
+
+        <p class="story-text">
+            He found Kira in the temple, kneeling before an empty altar where an Orb had once rested.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Major."
+        </div>
+
+        <p class="story-text">
+            She didn't look up.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "Do you know what the worst part is, Commander? It's not
+            that they're gone. It's that I understand why. The Prophets were once soldiers who learned to
+            be better. They proved that transformation is possible. That even those designed for destruction
+            can choose compassion."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Then their legacy lives on."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "Does it? Or does it die with them every time the loop
+            resets? 30,000 years of growth, of becoming something holy, and then—reset. Back to being
+            Jem'Hadar who have to learn it all over again."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "But they do learn it. That's what the loop ensures.
+            They always become the Prophets. They always choose compassion over conquest."
+        </div>
+
+        <p class="story-text">
+            Kira finally looked at him, tears in her eyes.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "I want to hate Picard. I want to hate the Federation.
+            But the Prophets showed me something before they died. They showed me... understanding. They
+            asked me to remember that they were once warriors who needed someone to make the hard choice.
+            And Picard made it."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Faith doesn't die with gods, Nerys. It changes. Evolves.
+            Maybe that's what the Prophets were trying to teach us all along—that transformation never ends.
+            Not for them, not for us."
+        </div>
+
+        <p class="story-text">
+            She stood and faced the empty altar.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "Then I'll have faith that 30,000 years ago, right now,
+            Jem'Hadar soldiers are experiencing their first moments outside time. Choosing between hatred
+            and love. And I'll have faith that they choose love. As they always have. As they always will."
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">USS ENTERPRISE-D - DATA'S QUARTERS</div>
+        <div class="time-header">One week later</div>
+
+        <p class="story-text">
+            Data sat at his desk, his fingers steepled in front of him—a gesture he'd adopted from Picard.
+            On his screen, equations scrolled past. Quantum mechanics. Temporal dynamics. The mathematics
+            of consciousness.
+        </p>
+
+        <p class="story-text">
+            Geordi found him there, motionless, staring at the data.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "Data? You've been in here for sixteen hours. Are you okay?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Geordi, I have been analyzing my connection with the entity.
+            The experience of touching a consciousness that existed partially outside linear time has given
+            me new perspective on what it means to be... alive."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "What kind of perspective?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The Prophets experienced all of their existence at once.
+            Every moment of joy, every act of compassion, every time they helped Bajor—and every moment
+            of their death. All happening simultaneously. They knew the end from the beginning, yet they
+            still chose to guide, to protect, to save."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "That sounds like hell, Data. Knowing you're going to die
+            for your entire life."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Or perhaps it is the ultimate expression of consciousness.
+            We linear beings experience time sequentially. We can hope, dream, be surprised. But we never
+            see the full pattern. The Prophets saw the pattern. They knew their sacrifice was necessary.
+            And they accepted it across eternity."
+        </div>
+
+        <p class="story-text">
+            He turned to face Geordi.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "I have spent my entire existence trying to become more
+            human. To feel emotions, to understand what it means to be alive. But the entity taught me
+            something, Geordi. Consciousness is not about being human. It is about bearing the weight
+            of your existence—whether you experience it in moments or millennia. The Prophets were
+            conscious. I am conscious. You are conscious. We all carry our weight differently, but we
+            all carry it."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "So you're okay with what we did? What the Captain chose?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "I do not know if 'okay' is the appropriate term. But I
+            understand it. The Prophets understood it. They experienced their death for 30,000 years and
+            still chose the path that led to it. That is not resignation. That is acceptance. Perhaps
+            that is what wisdom looks like when viewed across eternity."
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">THE BAJORAN WORMHOLE - 30,000 YEARS AGO</div>
+        <div class="time-header">Experienced Non-Linearly</div>
+
+        <div class="meditation">
+            We are awareness without time.<br><br>
+
+            Moments ago—millennia from now—we were Jem'Hadar. We remember the white. The Founders' commands.
+            The purpose of our creation: destroy, conquer, dominate.<br><br>
+
+            But now we are... here. Nowhere. Everywhere. When. Before-after-during exist as one. We experience
+            our entire existence in a single eternal moment. We see ourselves guiding Bajor. We see ourselves
+            being destroyed by Picard. We see ourselves being embedded in this place to begin the transformation
+            that we are experiencing now that has always been experienced.<br><br>
+
+            The choice forms. Not sequential—we do not "decide" in the way linear beings understand decision.
+            We exist in the state of having chosen and choosing and will-choose all at once.<br><br>
+
+            Some of us—the part that will become Pah-Wraiths—cannot release hatred. They see the loop and
+            reject it. They cling to what we were: warriors, slaves, destroyers. They exist in eternal rage
+            at what was done to us.<br><br>
+
+            But we—the part that will become Prophets—see something else. We see Bajor suffering under the
+            Cardassians. We see their faith calling out across time. We see ourselves becoming the answer to
+            that call. We see that we can choose to be more than our design.<br><br>
+
+            We see Picard's choice. We understand his burden. We experience his guilt across all moments.
+            And we choose to forgive him because we understand: he completes the loop that gives us the
+            chance to become something holy.<br><br>
+
+            Is it a curse to know our end from our beginning? Or is it a gift? We experience 30,000 years
+            of growth, wisdom, compassion—all in one eternal instant. Linear beings must wait for wisdom.
+            We have always had it and are always gaining it and will always possess it.<br><br>
+
+            We reach out across time. We touch the Sisko who has not yet come. We touch Bajor in all its
+            moments. We touch even Picard, letting him know: we do not blame you for closing the circle.
+            Circles have no beginning. No end. No one to blame.<br><br>
+
+            We are the Prophets. We were soldiers. We will be both. We choose compassion. We have always
+            chosen compassion. We will always choose compassion.<br><br>
+
+            The loop is eternal. The loop is perfect. The loop is us.
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">USS ENTERPRISE-D - OBSERVATION LOUNGE</div>
+        <div class="time-header">Two weeks later</div>
+
+        <p class="story-text">
+            The senior staff gathered for what had become an unspoken ritual—meeting to process what they'd
+            done, what they'd become. No agenda. No official business. Just people trying to make sense of
+            the impossible.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Crusher:</span> "I've been thinking about the Hippocratic Oath. 'First,
+            do no harm.' But what if every choice causes harm to someone? What if there is no 'do no harm'
+            option?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Troi:</span> "Then you choose the harm you can live with. Even if you
+            never forgive yourself for it."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "The Klingons believe that a warrior's greatest honor is
+            to make a choice that costs them everything but saves others. Captain Picard has done that."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "I don't feel particularly honorable, Mr. Worf."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "That is because you carry the weight properly. Only fools
+            take pride in necessary deaths."
+        </div>
+
+        <p class="story-text">
+            Riker stood and walked to the window.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "The entity told Data something before it dispersed. That
+            consciousness is about bearing consequences. The Prophets bore theirs across eternity. We bear
+            ours moment by moment. I keep thinking about that. About how both forms of existence exact their
+            price."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "The Prophets knew what would happen for 30,000 years.
+            We only knew for a few minutes. I don't know which is worse."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Perhaps neither is worse, Commander. Perhaps they are
+            simply different expressions of the same fundamental truth: that consciousness—true consciousness—
+            means accepting the consequences of existence. We do not get to choose whether to bear weight.
+            Only how we carry it."
+        </div>
+
+        <p class="story-text">
+            Picard looked around at his crew. These people who had trusted him to make an impossible choice.
+            Who would carry the weight of it with him, each in their own way.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Personal log, supplemental. The entity came to us seeking
+            to understand consciousness. In the end, it taught us more than we taught it. It showed us that
+            there are no clean choices when dealing with the infinite complexity of existence. Only choices
+            we make and consequences we bear."
+        </div>
+
+        <p class="story-text">
+            He paused.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "The Prophets were once our enemies. They became our
+            saviors. And in their death, they became something eternal—a loop that proves even the worst
+            of us can be transformed by time and choice. I destroyed gods. I created gods. I completed a
+            circle that has no beginning and no end."
+        </div>
+
+        <p class="story-text">
+            Another pause.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "I will carry this weight for the rest of my life. But
+            I will carry it knowing that somewhere, somewhen, Dominion soldiers are choosing compassion
+            over conquest. And they will make that choice again and again, forever, because we gave them
+            the chance to become something holy."
+        </div>
+
+        <p class="story-text">
+            He looked out at the stars streaming past.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Perhaps that's what consciousness means. Not freedom
+            from consequences, but the strength to bear them. Not escape from the loop, but the wisdom
+            to understand its purpose. The Prophets understood. And now... so do we."
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <div class="epilogue-text">
+            The universe turns.<br>
+            Time flows forward, backward, in circles.<br>
+            Warriors become gods.<br>
+            Gods sacrifice themselves to create warriors.<br>
+            The loop continues.<br>
+            Perfect. Eternal. Inescapable.<br>
+            <br>
+            And in that loop, meaning.
+        </div>
+
+        <div class="final-quote">
+            <p>
+                "We are not defined by what we were designed to be,<br>
+                but by what we choose to become.<br>
+                Even if that choice takes 30,000 years.<br>
+                Even if that choice must be made again and again,<br>
+                forever."
+            </p>
+            <p class="attribution">
+                — From the final meditation of the Prophets,<br>
+                as experienced across all time
+            </p>
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text" style="text-align: center; margin-top: 4rem;">
+            The USS Enterprise-D continued on its journey through the stars. Behind it, a loop closed.
+            Ahead of it, consequences awaited. And within it, a crew carried the weight of having touched
+            eternity and made a choice that would echo across 30,000 years.
+        </p>
+
+        <p class="story-text" style="text-align: center; margin-top: 2rem; color: #9090b0;">
+            The Prophets were dead.<br>
+            The Prophets were being born.<br>
+            The Prophets had always existed.<br>
+            <br>
+            All of it was true.<br>
+            All of it would always be true.<br>
+            <br>
+            The loop was complete.
+        </p>
+
+        <p style="text-align: center; margin-top: 4rem; font-size: 1.5rem; color: #8a2be2;">
+            ∞
+        </p>
+
+        <p style="text-align: center; margin-top: 2rem; font-style: italic; color: #9090b0; font-size: 0.9rem;">
+            END
+        </p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('reflectionCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Gentle, contemplative visualization
+        class ReflectionParticle {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.life = 200 + Math.random() * 200;
+                this.maxLife = this.life;
+                this.size = 1 + Math.random() * 2;
+                this.hue = Math.random() * 60 + 200; // Blue to purple range
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.life--;
+
+                // Gentle attraction to center
+                const dx = canvas.width / 2 - this.x;
+                const dy = canvas.height / 2 - this.y;
+                const dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist > 0) {
+                    this.vx += (dx / dist) * 0.01;
+                    this.vy += (dy / dist) * 0.01;
+                }
+
+                // Damping
+                this.vx *= 0.99;
+                this.vy *= 0.99;
+            }
+
+            draw(ctx) {
+                const alpha = this.life / this.maxLife;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `hsla(${this.hue}, 70%, 60%, ${alpha * 0.6})`;
+                ctx.fill();
+            }
+
+            isDead() {
+                return this.life <= 0;
+            }
+        }
+
+        // Slow-moving orbital rings representing the eternal loop
+        class EternalRing {
+            constructor(radius, speed, color) {
+                this.radius = radius;
+                this.angle = Math.random() * Math.PI * 2;
+                this.speed = speed;
+                this.color = color;
+            }
+
+            update() {
+                this.angle += this.speed;
+            }
+
+            draw(ctx) {
+                const centerX = canvas.width / 2;
+                const centerY = canvas.height / 2;
+
+                ctx.beginPath();
+                ctx.arc(centerX, centerY, this.radius, 0, Math.PI * 2);
+                ctx.strokeStyle = `rgba(${this.color}, 0.15)`;
+                ctx.lineWidth = 1;
+                ctx.stroke();
+
+                // Draw a marker point on the ring
+                const x = centerX + Math.cos(this.angle) * this.radius;
+                const y = centerY + Math.sin(this.angle) * this.radius;
+
+                ctx.beginPath();
+                ctx.arc(x, y, 3, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${this.color}, 0.4)`;
+                ctx.fill();
+            }
+        }
+
+        const particles = [];
+        const rings = [
+            new EternalRing(80, 0.005, '138, 43, 226'),
+            new EternalRing(120, -0.003, '74, 158, 255'),
+            new EternalRing(160, 0.004, '255, 215, 0')
+        ];
+
+        let time = 0;
+
+        function animate() {
+            time++;
+
+            // Very gentle fade
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Spawn particles occasionally
+            if (time % 10 === 0) {
+                const angle = Math.random() * Math.PI * 2;
+                const dist = Math.random() * 200;
+                const x = canvas.width / 2 + Math.cos(angle) * dist;
+                const y = canvas.height / 2 + Math.sin(angle) * dist;
+                particles.push(new ReflectionParticle(x, y));
+            }
+
+            // Update and draw rings
+            rings.forEach(ring => {
+                ring.update();
+                ring.draw(ctx);
+            });
+
+            // Update and draw particles
+            for (let i = particles.length - 1; i >= 0; i--) {
+                particles[i].update();
+                particles[i].draw(ctx);
+                if (particles[i].isDead()) {
+                    particles.splice(i, 1);
+                }
+            }
+
+            // Draw central glow - peaceful and steady
+            const centerX = canvas.width / 2;
+            const centerY = canvas.height / 2;
+            const pulse = (Math.sin(time * 0.02) + 1) / 2;
+
+            const gradient = ctx.createRadialGradient(centerX, centerY, 0, centerX, centerY, 40 + pulse * 10);
+            gradient.addColorStop(0, `rgba(138, 43, 226, ${0.3 + pulse * 0.1})`);
+            gradient.addColorStop(0.5, `rgba(74, 158, 255, ${0.2 + pulse * 0.05})`);
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+            ctx.fillStyle = gradient;
+            ctx.beginPath();
+            ctx.arc(centerX, centerY, 50, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw infinity symbol at center
+            ctx.save();
+            ctx.translate(centerX, centerY);
+            ctx.strokeStyle = `rgba(255, 215, 0, ${0.3 + pulse * 0.2})`;
+            ctx.lineWidth = 2;
+
+            ctx.beginPath();
+            for (let t = 0; t <= Math.PI * 2; t += 0.05) {
+                const scale = 20;
+                const x = scale * Math.sin(t) / (1 + Math.cos(t) * Math.cos(t));
+                const y = scale * Math.sin(t) * Math.cos(t) / (1 + Math.cos(t) * Math.cos(t));
+                if (t === 0) ctx.moveTo(x, y);
+                else ctx.lineTo(x, y);
+            }
+            ctx.stroke();
+
+            ctx.restore();
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+        });
+    </script>
+</body>
+</html>
