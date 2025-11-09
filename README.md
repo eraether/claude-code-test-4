@@ -18,6 +18,20 @@ The story's central revelation is a bootstrap paradox: the Prophets of the Celes
 
 **The loop has no beginning and no end. Effect creates cause creates effect.**
 
+## 📸 Screenshots
+
+### Landing Page
+![Landing Page](screenshots/landing-page.png)
+*The main navigation hub featuring all eight chapters with twinkling starfield background*
+
+### Chapter 01: The Discovery
+![Chapter 1 Animation](screenshots/chapter-01.png)
+*The quantum anomaly with swirling energy tendrils and particle streams*
+
+### Chapter 07: The Loop
+![Chapter 7 Animation](screenshots/chapter-07.png)
+*The eternal bootstrap paradox visualization showing the time loop*
+
 ## 🎨 Chapters
 
 ### Chapter 01: The Discovery
@@ -106,20 +120,6 @@ Simply open `index.html` in any modern web browser. Click on any chapter to read
 - **Transformation:** Can beings defined by conquest evolve into guides of compassion?
 - **The Weight of Choice:** What does it mean to bear the consequences of impossible decisions?
 - **Non-linear Time:** How would consciousness outside linear time experience causality?
-
-## 📸 Screenshots
-
-### Landing Page
-![Landing Page](screenshots/landing-page.png)
-*The main navigation hub featuring all eight chapters with twinkling starfield background*
-
-### Chapter 01: The Discovery
-![Chapter 1 Animation](screenshots/chapter-01.png)
-*The quantum anomaly with swirling energy tendrils and particle streams*
-
-### Chapter 07: The Loop
-![Chapter 7 Animation](screenshots/chapter-07.png)
-*The eternal bootstrap paradox visualization showing the time loop*
 
 ## 🧬 Development
 
