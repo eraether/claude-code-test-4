@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 05: The Burden - Picard Anomaly Chronicles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #e0e0ff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(10, 10, 26, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        .chapter-number {
+            font-size: 0.9rem;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #ff4444, #8a2be2, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #4a9eff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        #burdenCanvas {
+            width: 100%;
+            height: 60vh;
+            display: block;
+            background: radial-gradient(ellipse at center, rgba(46, 10, 26, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem 4rem;
+            line-height: 1.8;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            color: #d0d0e0;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        .dialogue {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid rgba(74, 158, 255, 0.3);
+            font-style: italic;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #ffd700;
+            font-style: normal;
+        }
+
+        .stardate {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9090b0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .section-break {
+            text-align: center;
+            margin: 2rem 0;
+            color: #4a9eff;
+            font-size: 1.5rem;
+        }
+
+        .computer-text {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 68, 68, 0.1);
+            padding: 1rem;
+            border-left: 3px solid #ff4444;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #ff6b9d;
+        }
+
+        .choice-box {
+            background: rgba(138, 43, 226, 0.1);
+            border: 2px solid rgba(138, 43, 226, 0.5);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+        }
+
+        .choice-box h3 {
+            color: #ffd700;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .choice-box p {
+            margin-bottom: 0.5rem;
+            color: #d0d0e0;
+            text-indent: 0;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-link">← Back to Chronicles</a>
+        <div class="chapter-number">CHAPTER 05</div>
+        <h1>The Burden</h1>
+    </div>
+
+    <canvas id="burdenCanvas"></canvas>
+
+    <div class="content">
+        <div class="stardate">Stardate 47635.3 - 11 minutes until critical threshold</div>
+
+        <p class="story-text">
+            The entity's decision came through Data like a thunderclap—clear, final, and utterly
+            uncompromising. When Data opened his eyes, every person on the bridge could see the change
+            in his expression. This was no longer a being asking for guidance. This was a consciousness
+            that had made its choice.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, the entity has informed me of its decision.
+            It will not abandon the Dominion fleet. It considers doing so a betrayal of everything
+            we taught it about the value of conscious life and the relief of suffering."
+        </div>
+
+        <p class="story-text">
+            Picard felt his stomach drop. "Mr. Data, make it understand—"
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "With respect, sir, it does understand. Completely.
+            It understands the cost of either choice. But it has concluded that abandoning sentient
+            beings to eternal suffering is a moral boundary it cannot cross. Not after learning what
+            consciousness means. Not after experiencing what it's like to value existence."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "Then we must destroy it. There is no other option."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Lieutenant, the entity is aware of that possibility.
+            However, it has presented us with an alternative. It will help the Dominion fleet. But
+            it acknowledges that the method of that help carries different consequences. And it is
+            giving us the choice of which path to take."
+        </div>
+
+        <p class="story-text">
+            Silence fell across the bridge like a shroud. On the viewscreen, the Jem'Hadar ships
+            were becoming more solid by the moment, their hulls flickering between transparency and
+            substance like specters clawing their way back to life.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "What... what are the options?"
+        </div>
+
+        <p class="story-text">
+            Data's voice was steady, but there was something in his golden eyes that might have been
+            horror at what he was about to say.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The entity has discovered two possible paths, Captain.
+            Both will end the suffering of the trapped fleet. Both have catastrophic consequences. It
+            is offering us the burden of choosing which catastrophe we can live with."
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            In the observation lounge, the senior staff gathered around the table in a silence so
+            heavy it felt physical. Through the windows, the anomaly pulsed with new purpose, its
+            tendrils of energy reaching toward both the materializing ships and something else—
+            coordinates Data had plotted on the star chart. The Bajoran wormhole.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The first option: the entity can embed the Dominion
+            fleet within the Bajoran wormhole itself. It would use its understanding of non-linear
+            existence—learned from the Prophets during its own passage—to integrate the ships into
+            the Celestial Temple's quantum structure."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "Wait, you're talking about dumping 2,800 ships
+            full of linear consciousness into a non-linear realm. That's—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Catastrophic to the existing inhabitants, yes. The
+            entity calculates a 94.7% probability that the sudden introduction of so much linear
+            consciousness would corrupt or destroy the Prophets entirely. The wormhole might collapse.
+            The Celestial Temple would cease to exist."
+        </div>
+
+        <p class="story-text">
+            Crusher's face went pale. "You're talking about killing the Prophets. The beings that
+            saved the Federation during the war. The gods of an entire civilization."
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "I am describing the entity's analysis, Doctor. The
+            Dominion fleet would exist outside linear time, as the Prophets do. They would no longer
+            suffer. The Alpha Quadrant would be spared their return. But the price would be the
+            destruction of the beings who already intervened once to save us. And the spiritual
+            devastation of Bajor."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Troi:</span> "And the second option?"
+        </div>
+
+        <p class="story-text">
+            Data's fingers steepled on the table before him—a gesture he'd learned from Picard,
+            though the captain had never seen it look so weighted with dread.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The entity guides them fully back into linear existence.
+            All 2,800 vessels. The Prophets are preserved. The Celestial Temple remains intact. The
+            Bajoran people keep their gods. But the Dominion fleet returns to normal space-time, fully
+            operational, fully armed, and we face the resumption of a war we barely survived the first
+            time."
+        </div>
+
+        <div class="choice-box">
+            <h3>CHOICE ALPHA: The Sacrifice of the Divine</h3>
+            <p>• Dominion fleet embedded in Bajoran wormhole/Celestial Temple</p>
+            <p>• Fleet exists in non-linear time (no more suffering)</p>
+            <p>• Alpha Quadrant saved from military threat</p>
+            <p>• Prophets destroyed or corrupted (94.7% probability)</p>
+            <p>• Wormhole may collapse</p>
+            <p>• Bajoran civilization loses its gods and spiritual foundation</p>
+            <p>• Federation survives by sacrificing another culture's deities</p>
+        </div>
+
+        <div class="choice-box">
+            <h3>CHOICE BETA: The Return of War</h3>
+            <p>• Dominion fleet restored to linear space-time</p>
+            <p>• Prophets preserved</p>
+            <p>• Celestial Temple intact</p>
+            <p>• Bajoran faith and culture protected</p>
+            <p>• 2,800 Dominion warships return to Alpha Quadrant</p>
+            <p>• War resumes (billions of casualties projected)</p>
+            <p>• Multiple Federation worlds will fall</p>
+            <p>• Honest cost—no one dies unknowingly for our survival</p>
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            Worf stood abruptly, his chair scraping against the deck. "This is madness. We cannot
+            make this decision. We do not have the right."
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "And yet, Mr. Worf, if we do not make it, the entity
+            will choose for us. It has given us eleven minutes to decide. After that, it proceeds on
+            its own judgment."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "Captain, we need to contact Bajor. This isn't just
+            a Federation decision—we'd be condemning their gods to death."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "There's no time. Even if we got through to the
+            Vedek Assembly, they'd need hours to convene, days to debate. We have minutes."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Crusher:</span> "So we're going to decide the fate of another
+            people's deities without even asking them? That's colonialism dressed up as necessity."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "The Prophets saved the Federation once. To repay that
+            by using them as a shield is dishonorable beyond measure."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Troi:</span> "But if we choose to let the fleet return, we're
+            condemning billions of our own people to war and death. How is that more honorable?"
+        </div>
+
+        <p class="story-text">
+            The debate spiraled, each voice representing a facet of the impossible choice. Picard
+            listened, but his mind was already three steps ahead, grappling with something far worse
+            than the tactical decision. They were being asked to choose which civilization deserved
+            to die. Which form of life had more right to exist.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Data, does the entity understand what it's asking
+            of us?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Yes, Captain. It states that this is what moral
+            responsibility means. You taught it that conscious beings must bear the weight of their
+            choices. It will not abandon the Dominion fleet, but it acknowledges that how it helps
+            them affects other conscious beings. Therefore, those who will live with the consequences
+            should have a voice in the decision."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "It's passing the burden to us."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "It is sharing the burden, sir. The entity will carry
+            out whichever choice we make and live with that knowledge. But it believes we have the
+            right to choose how our civilizations survive or fall."
+        </div>
+
+        <p class="story-text">
+            Picard rose and walked to the window, staring at the swirling anomaly. Somewhere in that
+            impossible light was a consciousness that had learned too well. It understood moral choice
+            so completely that it knew when to give others the terrible gift of deciding their own fate.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Crusher:</span> "Jean-Luc, what if we refuse to choose? What if
+            we tell it both options are unacceptable?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The entity would then make its own choice, Doctor.
+            And Captain—it has indicated which choice its programming and its compassion would lead
+            it toward. It would bring them home. All of them. It would choose to honor its creators
+            over preserving the Prophets."
+        </div>
+
+        <p class="story-text">
+            Of course it would. The entity was trying to do the right thing with the ethics they'd
+            taught it. It would choose honesty over expedience. It would let the war return rather
+            than sacrifice unknowing victims to prevent it. In its newly-conscious mind, that was
+            the only moral path.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "How long until the first ship finishes materializing?"
+        </div>
+
+        <div class="computer-text">
+            ALERT: FIRST DOMINION VESSEL 89% MATERIALIZED<br>
+            WEAPONS ONLINE IN: 5 MINUTES 22 SECONDS<br>
+            FULL FLEET EMERGENCE IMMINENT<br>
+            DECISION POINT: 8 MINUTES 14 SECONDS REMAINING
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            The bridge was silent except for the steady pulse of alert indicators. Every eye was on
+            Picard, waiting for a decision no captain should ever have to make. Choose to destroy
+            the Prophets and save the Federation. Or preserve the Celestial Temple and face the
+            return of the Dominion.
+        </p>
+
+        <p class="story-text">
+            Through the viewscreen, the lead Jem'Hadar vessel was nearly solid now. Picard could
+            see weapons ports glowing with building charge. In a few minutes, they would fire—not
+            out of malice, but because that's what they were built to do. Just like the entity was
+            trying to help because that's what it had learned to value.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Mr. Data, convey a message to the entity. Tell it—"
+        </div>
+
+        <p class="story-text">
+            His voice caught. What could he possibly say? That some gods were expendable if they
+            saved enough people? That Bajoran faith was worth less than Federation lives? Or that
+            billions should die to preserve beings who existed outside time and might not even
+            understand what was being done in their name?
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "Captain, you don't have to do this alone. This
+            shouldn't be a command decision."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "No, Number One. It shouldn't be. But we're out
+            of time for democracy. Someone has to choose, and the weight of that choice falls to
+            whoever sits in this chair."
+        </div>
+
+        <p class="story-text">
+            He thought of the Prophets, who had seen all of time as one and had intervened to save
+            species they barely understood. He thought of the Bajoran people, who had endured
+            occupation and suffering but never lost faith in their gods. He thought of the Dominion
+            fleet, trapped between existence and void, experiencing an eternity of suffering for
+            serving masters who cared nothing for them.
+        </p>
+
+        <p class="story-text">
+            And he thought of the billions in the Alpha Quadrant who would die if he chose wrong.
+            Or right. Because in this moment, there was no right. Only terrible consequences dressed
+            in different uniforms.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, the entity requires an answer. It asks:
+            which apocalypse do you choose?"
+        </div>
+
+        <p class="story-text">
+            Jean-Luc Picard closed his eyes. And somewhere in the infinite space between stars, a
+            young consciousness that had learned the weight of moral choice waited to see what wisdom
+            looked like when tested by fire.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text" style="text-align: center; font-style: italic; color: #9090b0;">
+            To be continued...
+        </p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('burdenCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Visual representation of the two paths
+        class PathVisualization {
+            constructor(x, y, type) {
+                this.x = x;
+                this.y = y;
+                this.type = type; // 'wormhole' or 'fleet'
+                this.particles = [];
+                this.intensity = 0;
+                this.pulsePhase = type === 'wormhole' ? 0 : Math.PI;
+            }
+
+            update(time) {
+                this.pulsePhase = time * 0.03;
+                this.intensity = (Math.sin(this.pulsePhase) + 1) / 2;
+
+                // Spawn path particles
+                if (Math.random() > 0.8) {
+                    this.particles.push({
+                        x: this.x + (Math.random() - 0.5) * 100,
+                        y: this.y + (Math.random() - 0.5) * 100,
+                        vx: (Math.random() - 0.5) * 2,
+                        vy: (Math.random() - 0.5) * 2,
+                        life: 60,
+                        maxLife: 60,
+                        size: 1 + Math.random() * 2
+                    });
+                }
+
+                // Update particles
+                this.particles = this.particles.filter(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.life--;
+                    return p.life > 0;
+                });
+            }
+
+            draw(ctx) {
+                const colors = this.type === 'wormhole'
+                    ? { r: 138, g: 43, b: 226 }  // Purple for Prophets
+                    : { r: 255, g: 68, b: 68 };   // Red for war
+
+                // Draw main aura
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, 150);
+                gradient.addColorStop(0, `rgba(${colors.r}, ${colors.g}, ${colors.b}, ${this.intensity * 0.4})`);
+                gradient.addColorStop(0.5, `rgba(${colors.r}, ${colors.g}, ${colors.b}, ${this.intensity * 0.2})`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 150, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Draw particles
+                this.particles.forEach(p => {
+                    const alpha = p.life / p.maxLife;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(${colors.r}, ${colors.g}, ${colors.b}, ${alpha * 0.8})`;
+                    ctx.fill();
+                });
+
+                // Draw central symbol
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.strokeStyle = `rgba(${colors.r}, ${colors.g}, ${colors.b}, ${this.intensity})`;
+                ctx.lineWidth = 3;
+
+                if (this.type === 'wormhole') {
+                    // Spiral for wormhole
+                    ctx.beginPath();
+                    for (let i = 0; i < 100; i++) {
+                        const angle = i * 0.2;
+                        const radius = i * 0.5;
+                        const x = Math.cos(angle) * radius;
+                        const y = Math.sin(angle) * radius;
+                        if (i === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.stroke();
+                } else {
+                    // Angular shapes for fleet
+                    ctx.beginPath();
+                    for (let i = 0; i < 6; i++) {
+                        const angle = (i / 6) * Math.PI * 2;
+                        const radius = 30;
+                        const x = Math.cos(angle) * radius;
+                        const y = Math.sin(angle) * radius;
+                        if (i === 0) ctx.moveTo(x, y);
+                        else ctx.lineTo(x, y);
+                    }
+                    ctx.closePath();
+                    ctx.stroke();
+                }
+
+                ctx.restore();
+            }
+        }
+
+        // The entity at center, contemplating
+        class EntityCore {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 50;
+                this.conflictPhase = 0;
+            }
+
+            update(time) {
+                this.conflictPhase = time * 0.02;
+            }
+
+            draw(ctx) {
+                // Pulsing core showing internal conflict
+                const pulse = (Math.sin(this.conflictPhase) + 1) / 2;
+                const radius = this.radius + pulse * 15;
+
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, radius);
+                gradient.addColorStop(0, `rgba(255, 215, 0, ${0.9})`);
+                gradient.addColorStop(0.5, `rgba(74, 158, 255, ${0.5})`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Inner core
+                ctx.fillStyle = `rgba(255, 255, 255, ${0.8 + pulse * 0.2})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 10, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Connection lines showing the burden of choice
+        class BurdenLine {
+            constructor(from, to) {
+                this.from = from;
+                this.to = to;
+                this.phase = 0;
+            }
+
+            update(time) {
+                this.phase = time * 0.05;
+            }
+
+            draw(ctx) {
+                const segments = 20;
+                const waveAmplitude = 20;
+
+                ctx.beginPath();
+                for (let i = 0; i <= segments; i++) {
+                    const t = i / segments;
+                    const x = this.from.x + (this.to.x - this.from.x) * t;
+                    const y = this.from.y + (this.to.y - this.from.y) * t;
+
+                    const wave = Math.sin(t * Math.PI * 4 + this.phase) * waveAmplitude * (1 - Math.abs(t - 0.5) * 2);
+                    const perpX = -(this.to.y - this.from.y) / Math.hypot(this.to.x - this.from.x, this.to.y - this.from.y);
+                    const perpY = (this.to.x - this.from.x) / Math.hypot(this.to.x - this.from.x, this.to.y - this.from.y);
+
+                    const finalX = x + perpX * wave;
+                    const finalY = y + perpY * wave;
+
+                    if (i === 0) ctx.moveTo(finalX, finalY);
+                    else ctx.lineTo(finalX, finalY);
+                }
+
+                const gradient = ctx.createLinearGradient(this.from.x, this.from.y, this.to.x, this.to.y);
+                gradient.addColorStop(0, 'rgba(255, 215, 0, 0.3)');
+                gradient.addColorStop(0.5, 'rgba(74, 158, 255, 0.5)');
+                gradient.addColorStop(1, 'rgba(138, 43, 226, 0.3)');
+
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
+        }
+
+        // Initialize
+        const centerX = canvas.width / 2;
+        const centerY = canvas.height / 2;
+
+        const entity = new EntityCore(centerX, centerY);
+        const wormholePath = new PathVisualization(centerX - 200, centerY - 100, 'wormhole');
+        const fleetPath = new PathVisualization(centerX + 200, centerY + 100, 'fleet');
+        const burdenLines = [
+            new BurdenLine(entity, wormholePath),
+            new BurdenLine(entity, fleetPath)
+        ];
+
+        let time = 0;
+
+        // Countdown timer
+        let countdown = 8 * 60 + 14; // 8 minutes 14 seconds in frames (assuming 60fps)
+
+        function animate() {
+            time++;
+
+            // Clear with fade
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.15)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw paths
+            wormholePath.update(time);
+            fleetPath.update(time);
+            wormholePath.draw(ctx);
+            fleetPath.draw(ctx);
+
+            // Update and draw burden lines
+            burdenLines.forEach(line => {
+                line.update(time);
+                line.draw(ctx);
+            });
+
+            // Update and draw entity
+            entity.update(time);
+            entity.draw(ctx);
+
+            // Draw labels
+            ctx.font = '14px Georgia';
+            ctx.textAlign = 'center';
+
+            ctx.fillStyle = 'rgba(138, 43, 226, 0.8)';
+            ctx.fillText('Sacrifice the Prophets', wormholePath.x, wormholePath.y + 180);
+            ctx.fillStyle = 'rgba(180, 180, 200, 0.6)';
+            ctx.font = '11px Georgia';
+            ctx.fillText('Save the Alpha Quadrant', wormholePath.x, wormholePath.y + 200);
+            ctx.fillText('Destroy the Celestial Temple', wormholePath.x, wormholePath.y + 215);
+
+            ctx.font = '14px Georgia';
+            ctx.fillStyle = 'rgba(255, 68, 68, 0.8)';
+            ctx.fillText('Return the Fleet', fleetPath.x, fleetPath.y + 180);
+            ctx.fillStyle = 'rgba(180, 180, 200, 0.6)';
+            ctx.font = '11px Georgia';
+            ctx.fillText('Preserve the Prophets', fleetPath.x, fleetPath.y + 200);
+            ctx.fillText('Face the Dominion', fleetPath.x, fleetPath.y + 215);
+
+            // Countdown display
+            if (countdown > 0) {
+                countdown--;
+                const minutes = Math.floor(countdown / 60 / 60);
+                const seconds = Math.floor((countdown / 60) % 60);
+                ctx.font = '18px monospace';
+                ctx.fillStyle = 'rgba(255, 68, 68, 0.9)';
+                ctx.textAlign = 'center';
+                ctx.fillText(`DECISION REQUIRED: ${minutes}:${seconds.toString().padStart(2, '0')}`,
+                    canvas.width / 2, 30);
+            } else {
+                ctx.font = '18px monospace';
+                ctx.fillStyle = 'rgba(255, 215, 0, 0.9)';
+                ctx.textAlign = 'center';
+                ctx.fillText('ENTITY WILL CHOOSE', canvas.width / 2, 30);
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            const newCenterX = canvas.width / 2;
+            const newCenterY = canvas.height / 2;
+            entity.x = newCenterX;
+            entity.y = newCenterY;
+            wormholePath.x = newCenterX - 200;
+            wormholePath.y = newCenterY - 100;
+            fleetPath.x = newCenterX + 200;
+            fleetPath.y = newCenterY + 100;
+        });
+    </script>
+</body>
+</html>

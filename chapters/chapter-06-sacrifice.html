@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 06: The Sacrifice - Picard Anomaly Chronicles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #e0e0ff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(10, 10, 26, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        .chapter-number {
+            font-size: 0.9rem;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #000, #8a2be2, #000);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #4a9eff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        #sacrificeCanvas {
+            width: 100%;
+            height: 60vh;
+            display: block;
+            background: radial-gradient(ellipse at center, rgba(46, 10, 46, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .content {
+            max-width: 900px;
+            margin: 3rem auto;
+            padding: 0 2rem 4rem;
+            line-height: 1.8;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            color: #d0d0e0;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        .dialogue {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid rgba(74, 158, 255, 0.3);
+            font-style: italic;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #ffd700;
+            font-style: normal;
+        }
+
+        .stardate {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9090b0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .section-break {
+            text-align: center;
+            margin: 2rem 0;
+            color: #4a9eff;
+            font-size: 1.5rem;
+        }
+
+        .location-header {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #8a2be2;
+            font-weight: bold;
+            margin: 2rem 0 1rem 0;
+            letter-spacing: 2px;
+        }
+
+        .computer-text {
+            font-family: 'Courier New', monospace;
+            background: rgba(138, 43, 226, 0.1);
+            padding: 1rem;
+            border-left: 3px solid #8a2be2;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #b19cd9;
+        }
+
+        .prophet-text {
+            font-family: 'Georgia', serif;
+            background: rgba(138, 43, 226, 0.15);
+            padding: 1.5rem;
+            border: 2px solid rgba(138, 43, 226, 0.4);
+            margin: 2rem 0;
+            font-size: 1.05rem;
+            color: #c8b5e8;
+            font-style: italic;
+            text-align: center;
+            text-indent: 0;
+        }
+
+        .bajoran-text {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid rgba(255, 215, 0, 0.5);
+            font-style: italic;
+            color: #e8d5a0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-link">← Back to Chronicles</a>
+        <div class="chapter-number">CHAPTER 06</div>
+        <h1>The Sacrifice</h1>
+    </div>
+
+    <canvas id="sacrificeCanvas"></canvas>
+
+    <div class="content">
+        <div class="location-header">USS ENTERPRISE-D</div>
+        <div class="stardate">Stardate 47635.3</div>
+
+        <p class="story-text">
+            Jean-Luc Picard opened his eyes. The decision had been made in that infinite moment of
+            silence, weighing thousands of years of Bajoran faith against billions of lives in the
+            Alpha Quadrant. There had been no revelation, no divine clarity. Only the cold calculus
+            of triage on a civilizational scale.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Mr. Data... tell the entity..." His voice caught.
+            He had ordered people to their deaths before. Had made impossible choices. But he had
+            never ordered the death of gods. "Tell it to proceed with the first option. The wormhole."
+        </p>
+
+        <p class="story-text">
+            The words fell like stones into an abyss. Around him, his senior staff reacted in their
+            own ways—Crusher closed her eyes, Troi's face showed raw anguish, Worf's jaw tightened
+            but he gave a slight nod of acknowledgment. Only Riker spoke.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "Captain... are you certain?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "No, Number One. I am not certain of anything except
+            that in four minutes, the entity will make its own choice. And I cannot allow 2,800 Dominion
+            warships to return to our space. Even if the cost is..." He couldn't finish the sentence.
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The entity acknowledges your decision, Captain. It is...
+            it expresses sorrow for what must be done. But it agrees that this path causes the least
+            suffering to those who experience linear time. It will begin the process immediately."
+        </div>
+
+        <p class="story-text">
+            On the viewscreen, the anomaly began to change. Its swirling colors shifted, becoming more
+            focused, more purposeful. Tendrils of energy that had been reaching toward the materializing
+            Dominion ships now redirected, forming a bridge of impossible light that stretched across
+            parsecs toward the Bajoran wormhole.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "Captain, I'm detecting a massive buildup of quantum
+            energy. The entity is creating a subspace corridor directly to the wormhole. It's going to
+            use itself as a conduit to funnel the Dominion ships into the Celestial Temple."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "How long until—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "Two minutes, sir. Once it starts, there's no stopping
+            it. The energy cascade will complete whether we want it to or not."
+        </p>
+
+        <p class="story-text">
+            Picard gripped the arms of his command chair. Two minutes until they committed deicide. Two
+            minutes until the Prophets—beings who had saved the Federation, who had existed for
+            millennia—would be destroyed to contain a threat that they themselves had created by
+            removing the Dominion fleet from time.
+        </p>
+
+        <p class="story-text">
+            The irony was not lost on him. The Prophets' mercy would be their destruction.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">DEEP SPACE NINE</div>
+        <div class="stardate">Simultaneous</div>
+
+        <p class="story-text">
+            On Deep Space Nine, Commander Benjamin Sisko sat in his office, reviewing supply manifests,
+            when the first tremor hit. Not physical—he'd experienced enough of those during his time
+            on the station. This was something else. A vibration in a part of him that had no name, the
+            place where the Prophets had touched him and named him their Emissary.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Computer, is there any unusual activity near the wormhole?"
+        </div>
+
+        <div class="computer-text">
+            SCANNING...<br>
+            DETECTING MASSIVE SUBSPACE DISTORTION<br>
+            ORIGIN: UNKNOWN, BEARING 127 MARK 34<br>
+            QUANTUM SIGNATURE CONSISTENT WITH NON-LINEAR SPACE-TIME<br>
+            ENERGY CORRIDOR FORMING... TERMINUS: BAJORAN WORMHOLE
+        </div>
+
+        <p class="story-text">
+            Sisko's blood ran cold. He tapped his combadge.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Sisko to Ops. Major, what's happening with the wormhole?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira (comm):</span> "Commander, we're detecting some kind of energy
+            stream heading directly for it. I've never seen anything like this. The Prophets are—" Her
+            voice caught. "Sir, something's wrong. The Celestial Temple is responding, but not like
+            usual. It's... it's like it's screaming."
+        </div>
+
+        <p class="story-text">
+            Sisko was out of his office and running for Ops before Kira finished her sentence. When he
+            arrived, the viewscreen showed the wormhole in its stable form, but something was terribly
+            wrong. The normally serene blue-white event horizon was pulsing erratically, colors shifting
+            through spectrums that shouldn't exist.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Dax:</span> "Benjamin, I'm reading massive temporal disruptions inside
+            the wormhole. Whatever's coming, it's bringing something with it. Multiple ships. Hundreds
+            of them. And the quantum signature—oh no. These are Dominion vessels."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "They're trying to invade through the Celestial Temple?
+            The Prophets will never allow—"
+        </div>
+
+        <p class="story-text">
+            She stopped. Because at that moment, every Bajoran on the station felt it. A pain that had
+            no physical component but was more real than any wound. The sensation of something sacred
+            being violated. Being destroyed.
+        </p>
+
+        <div class="bajoran-text">
+            <span class="speaker">Kira:</span> "No. No, no, no. The Prophets. They're... I can feel them
+            dying. What's happening? What is this?"
+        </div>
+
+        <p class="story-text">
+            Sisko closed his eyes and reached out with that part of him that existed outside linear time,
+            the part that could touch the beings who dwelled in the Temple. What he found made him stagger.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">THE CELESTIAL TEMPLE</div>
+        <div class="stardate">Outside Linear Time</div>
+
+        <div class="prophet-text">
+            We are.
+            <br><br>
+            We have always been. We will always be. Past and future and present exist as one within us.
+            We see the Sisko. We see all Siskos—the one who has not yet come, the one who stands now,
+            the one who will return to us. We see the linear beings in their vessels of metal and purpose.
+            <br><br>
+            We see... what is this? Something comes. Something wrong. Linear consciousness in multitude,
+            forced into our realm by something that understands both linear and non-linear existence.
+            An anomaly. A hybrid. A creation of the builders-of-dominion who has learned from the
+            android-who-seeks-to-become.
+            <br><br>
+            The ships come. So many. Their minds scream with linearity, with past and future as separate
+            things, with the concept of before and after. They are fire in water. They are matter in void.
+            They do not belong here.
+        </div>
+
+        <p class="story-text">
+            If the Prophets could scream, this would have been the moment. But they existed beyond such
+            expressions. What they experienced instead was more fundamental—the sensation of their
+            quantum coherence being shattered. Like a mind being forced to think in contradictory
+            directions simultaneously. Like existing and not-existing at once.
+        </p>
+
+        <div class="prophet-text">
+            We understand. The linear beings have chosen. They sacrifice us to contain the builders-of-dominion.
+            The Sisko's corporeal friends have decided that our existence is worth less than theirs. This is
+            what it means to think in terms of before and after. To choose who dies so others may live.
+            <br><br>
+            We do not experience death as they do. We have always existed and always will exist because
+            we are outside their time. But they are pushing linearity into us. Forcing us to experience
+            entropy. Making us understand what it means to end.
+            <br><br>
+            This is what mortality feels like.
+            <br><br>
+            The Sisko told us once of loss. Of his Jennifer, taken from him. We did not understand. We
+            do now. We are losing ourselves. We are experiencing the sensation of becoming less than we
+            were. This is grief. This is death. This is the price the linear beings will not pay themselves.
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">USS ENTERPRISE-D</div>
+
+        <p class="story-text">
+            Data's eyes widened, his golden irises reflecting something like horror.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, the entity is showing me what's happening inside
+            the wormhole. The Prophets are... they are attempting to resist. But each Dominion ship that
+            enters forces more linear consciousness into their realm. They are being corrupted. Fragmented.
+            They are experiencing something they have never known—dissolution."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Troi:</span> "I feel it too. Even from here. Such pain. They're dying,
+            Captain. We're killing them."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Number of ships transferred?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "Two hundred forty-seven and counting. The entity is
+            pulling them through the corridor faster than I thought possible. At this rate, the entire
+            fleet will be inside the wormhole in ninety seconds."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "And the Prophets?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, I do not have adequate language to describe what
+            is occurring. Imagine a consciousness that experiences all of time simultaneously being forced
+            to experience it sequentially. Their quantum matrix is collapsing. They are... learning to die."
+        </div>
+
+        <p class="story-text">
+            Picard watched the viewscreen, where the energy corridor pulsed with terrible purpose. Somewhere
+            along that bridge of light, gods were discovering mortality. And he had ordered it done.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">BAJOR - TEMPLE OF B'HALA</div>
+
+        <p class="story-text">
+            In the ancient temple that Sisko himself had excavated, the Vedek Assembly was in session when
+            the first scream went up. Not from any Vedek, but from the Orb of Prophecy itself. The sacred
+            artifact began to pulse erratically, its light—which had shone steadily for millennia—
+            flickering like a dying flame.
+        </p>
+
+        <div class="bajoran-text">
+            <span class="speaker">Vedek Tonell:</span> "The Prophets! Something is wrong with the Prophets!
+            I can feel their pain!"
+        </div>
+
+        <p class="story-text">
+            Around the planet, every Bajoran who had ever experienced a vision from the Prophets felt it.
+            A wrongness. A severing. Like a beloved voice going silent mid-sentence. Centuries of faith,
+            millennia of connection to beings who existed beyond time, and now...
+        </p>
+
+        <p class="story-text">
+            Silence.
+        </p>
+
+        <p class="story-text">
+            Not the peaceful silence of meditation. The terrible silence of absence. Of loss. Of something
+            that had always been there suddenly ceasing to exist.
+        </p>
+
+        <div class="bajoran-text">
+            <span class="speaker">Vedek Yassim:</span> "They're gone. The Prophets are... how can they be
+            gone? They are eternal. They exist outside time. How can eternal beings cease to be?"
+        </div>
+
+        <p class="story-text">
+            Throughout Bajor, in every temple, every shrine, every home where an Orb had been kept, the
+            faithful fell to their knees. Not in prayer—prayer required someone to hear it. This was grief.
+            Raw, incomprehensible grief for gods who had died.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">DEEP SPACE NINE - OPS</div>
+
+        <p class="story-text">
+            Sisko opened his eyes, and Major Kira knew immediately that something fundamental had broken
+            in him. The part of him that was the Emissary, the bridge between Bajor and the Prophets,
+            had been sheared away.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "They're gone. The Prophets are... they showed me, at the
+            end. They wanted me to understand. The Federation did this. Starfleet. They chose to sacrifice
+            the Prophets to contain a Dominion fleet."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "No. No, that's impossible. Starfleet wouldn't... the
+            Federation owes everything to the Prophets. They're the ones who removed that Dominion fleet
+            during the war. Without them, we'd all be—"
+        </div>
+
+        <p class="story-text">
+            Understanding dawned on her face. Then fury.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "That's why. That fleet. It's returned, hasn't it? And
+            rather than fight it themselves, rather than risk their own lives, they sacrificed OUR gods.
+            They used the Celestial Temple as a prison and killed the Prophets to save themselves."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Dax:</span> "Nerys, we don't know the full situation. There might have
+            been reasons—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "Reasons? What possible reason justifies killing the beings
+            who saved your entire civilization? The Prophets intervened. They removed that fleet to save
+            the Federation. And this is how they're repaid? By being murdered?"
+        </div>
+
+        <p class="story-text">
+            Sisko said nothing. He couldn't. Because he understood both sides too well. The Federation
+            facing 2,800 Dominion warships. The impossible choice. The cold math of lives saved versus
+            lives lost. But he also understood what had been taken from Bajor. From him.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Contact Starfleet Command. I want to know which ship
+            was responsible. And Major... prepare a message to the Bajoran government. They need to know
+            what's happened to the Prophets. What's been done to the Celestial Temple."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "What's been done BY the Federation, you mean."
+        </div>
+
+        <p class="story-text">
+            The anger in her voice could have cut duranium.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">USS ENTERPRISE-D</div>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "All ships transferred, Captain. The last Dominion vessel
+            just entered the wormhole."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The wormhole is destabilizing. Quantum coherence down to
+            twelve percent and falling. The Prophets' consciousness has been almost completely fragmented.
+            They no longer exist as unified entities. They are... scattered. Dissolved into quantum noise."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Are they... are they dead?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The concept of death may not apply to non-linear beings,
+            sir. But they no longer exist in any form that could be called conscious. The wormhole itself
+            is collapsing. In approximately forty-three seconds, the Bajoran wormhole will cease to exist.
+            The Celestial Temple will be no more."
+        </div>
+
+        <p class="story-text">
+            On the viewscreen, they could see it happening even from this distance—the energy readings
+            from the wormhole spiking erratically, then plummeting. The stable vertext that had connected
+            the Alpha and Gamma Quadrants for decades was coming apart.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Crusher:</span> "What about the Dominion ships?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "They are trapped in the collapsing quantum space. They
+            will be... I believe the term would be 'fossilized' in subspace. No longer suffering. No
+            longer existing in linear time. But also no longer capable of threatening the Alpha Quadrant.
+            The entity's plan has succeeded."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "At what cost."
+        </div>
+
+        <p class="story-text">
+            It wasn't a question. They all knew the cost. An entire civilization's gods. Thousands of
+            years of faith. The Emissary's connection to the divine. The wormhole that had made Bajor
+            strategically vital, that had brought them into the Federation's protection in the first place.
+        </p>
+
+        <p class="story-text">
+            All of it, gone. Sacrificed to contain a threat that the Prophets themselves had helped create.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "Captain, incoming transmission from Deep Space Nine. It's
+            Commander Sisko. He's requesting to speak with whoever authorized the attack on the Celestial
+            Temple."
+        </div>
+
+        <p class="story-text">
+            The word 'attack' hit like a phaser blast. That's what it was, wasn't it? They hadn't been
+            defending the Alpha Quadrant. They'd been attacking the Bajoran gods.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "On screen."
+        </div>
+
+        <p class="story-text">
+            Benjamin Sisko's face appeared on the viewscreen. The man looked hollowed out, as if something
+            essential had been carved from his soul. Behind him, Picard could see Major Kira, her expression
+            one of pure rage barely held in check.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Captain Picard. I've just been informed by Starfleet
+            Command that it was the Enterprise that was responsible for... for what happened to the Prophets.
+            I need to hear it from you. Did you give the order?"
+        </div>
+
+        <p class="story-text">
+            Picard met Sisko's gaze. He could have explained. Could have laid out the impossible choice,
+            the 2,800 Dominion warships, the billions of lives at stake. But in this moment, explanations
+            felt like excuses.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Yes, Commander. I gave the order. I am responsible for
+            the destruction of the Prophets and the collapse of the Bajoran wormhole."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira (on screen):</span> "You murdered our gods! The Prophets saved your
+            entire civilization and you repaid them by using them as a dumping ground for your enemies!
+            You didn't even ask us! You just decided that Bajoran faith was worth less than Federation
+            lives!"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Major Kira, I understand your anger—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Kira:</span> "You understand nothing! Those weren't just beings to us,
+            they were the center of our entire existence! For thousands of years, the Prophets guided us,
+            protected us, gave us hope through the Occupation! And you killed them!"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Major. Stand down." His voice was quiet but carried the
+            weight of command. Kira stepped back, but the fury didn't leave her eyes. Sisko turned back
+            to Picard. "Captain, I need to know. Why? What could possibly justify this?"
+        </div>
+
+        <p class="story-text">
+            And so Picard explained. The entity. The trapped Dominion fleet. The impossible choice between
+            sacrificing the Prophets or facing the return of 2,800 warships. He laid it all out with the
+            clarity and precision that had defined his career.
+        </p>
+
+        <p class="story-text">
+            When he finished, Sisko was silent for a long moment.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "So you chose. Federation lives over Bajoran faith. Your
+            civilization over ours. And you made that choice without consulting Bajor, without asking the
+            people whose gods you were about to destroy if they had any say in the matter."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "There was no time, Commander. We had minutes to decide."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "No time to ask, but time enough to kill. Captain Picard,
+            I have known you for years. I have respected you. But right now, I am looking at a man who
+            committed genocide against non-corporeal beings because it was more convenient than fighting
+            his own battles."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "Commander, that's not fair. We were facing—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "Fair? You want to talk to me about fair, Commander? Tell
+            that to the Bajorans who just lost their connection to the divine. Tell it to the children who
+            will grow up without the Prophets' guidance. Tell it to the Emissary who can no longer hear
+            the voices of the beings who chose him."
+        </div>
+
+        <p class="story-text">
+            Picard saw it then—Sisko's hand was shaking. Not with anger, but with loss. The man wasn't
+            just a Starfleet officer condemning a decision. He was a priest who had lost his gods.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Benjamin... I am truly sorry. If there had been any
+            other way—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Sisko:</span> "There's always another way, Captain. You just chose not
+            to take it. You chose to let others pay the price for your survival. The Prophets showed me
+            what you did to them at the end. They wanted me to understand. They were learning to die,
+            Captain. Beings who had existed forever, experiencing mortality for the first time. Because
+            you needed them to."
+        </div>
+
+        <p class="story-text">
+            The transmission ended. Sisko's face disappeared from the screen, leaving only the stars and
+            the distant glow of the entity, which was already beginning to fade now that its purpose had
+            been fulfilled.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            In the ready room, Picard stood alone, staring out at the stars. Behind him, the door chimed.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Come."
+        </div>
+
+        <p class="story-text">
+            Data entered, his movements precise as always, but something in his expression suggested
+            uncertainty.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, the entity has transmitted its final message
+            before it disperses. It wanted you to know that it understands the weight of what you chose.
+            It says that bearing the consequences of impossible decisions is what it means to be truly
+            conscious. To be... human."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Is that what it learned from us, Data? How to sacrifice
+            others for the greater good?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "It learned that morality is not about choosing between
+            good and evil, sir. It is about choosing which price you are willing to pay. And who pays it."
+        </div>
+
+        <p class="story-text">
+            Picard closed his eyes. Outside, the entity's light was fading, returning to whatever strange
+            existence it had known before encountering the Enterprise. The Dominion fleet was trapped in
+            the quantum remnants of the wormhole. The Alpha Quadrant was safe.
+        </p>
+
+        <p class="story-text">
+            And the Prophets were dead.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Data, in your study of humanity, have you ever
+            encountered the concept of a Pyrrhic victory?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "A victory achieved at such devastating cost that it is
+            indistinguishable from defeat. Yes, sir. I have studied the concept extensively."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Then you understand what we've done here today."
+        </div>
+
+        <p class="story-text">
+            Data was silent for a moment. Then, quietly:
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Sir, the entity also wanted me to tell you something else.
+            It said that the Prophets' last coherent thought before they dissolved was not anger. It was
+            understanding. They showed the entity—and through it, me—that they comprehended why you made
+            the choice you did. They did not forgive you. But they understood."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Understanding without forgiveness. Perhaps that's all
+            we deserve."
+        </div>
+
+        <p class="story-text">
+            Outside the window, the last traces of the entity faded into the cosmic background. Somewhere,
+            Deep Space Nine was preparing to inform Bajor that their gods were gone. Somewhere, the Vedek
+            Assembly was trying to comprehend a universe without the Prophets. Somewhere, millions of
+            Bajorans were experiencing a silence where there had always been divine presence.
+        </p>
+
+        <p class="story-text">
+            And on the Enterprise, Jean-Luc Picard stood alone with the knowledge that he had saved
+            billions of lives by destroying the sacred. That he had preserved the Federation by committing
+            an act that Bajor would never, could never, forgive.
+        </p>
+
+        <p class="story-text">
+            He had made the right choice. He was certain of that.
+        </p>
+
+        <p class="story-text">
+            He would never forgive himself for it.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <div class="location-header">BAJOR - PLANETARY TRANSMISSION</div>
+        <div class="stardate">Two hours later</div>
+
+        <p class="story-text">
+            The First Minister's address to the Bajoran people was broadcast across every channel. Her
+            voice shook as she spoke words that no leader should ever have to say.
+        </p>
+
+        <div class="bajoran-text">
+            <span class="speaker">First Minister Shakaar:</span> "My fellow Bajorans. I must inform you
+            of a tragedy that defies comprehension. The Celestial Temple has collapsed. The Prophets...
+            the Prophets are gone. They were destroyed by the Federation in an act of military necessity.
+            I know these words seem impossible. How can the eternal cease to be? How can our gods die?
+            But they have. And we must now face a future without them."
+        </div>
+
+        <p class="story-text">
+            The silence that followed across Bajor was absolute. Then came the grief. The rage. The
+            incomprehension of a people who had just learned that the center of their universe no longer
+            existed.
+        </p>
+
+        <div class="bajoran-text">
+            <span class="speaker">Shakaar:</span> "The Federation will tell us it was necessary. That
+            billions of lives were saved. That there was no other choice. Perhaps they are right. Perhaps
+            the mathematics of survival demanded this sacrifice. But mathematics cannot account for faith.
+            For the loss of the divine. For what it means to a people when their gods are murdered in the
+            name of someone else's tomorrow."
+        </div>
+
+        <p class="story-text">
+            She paused, and when she spoke again, her voice held a terrible finality.
+        </p>
+
+        <div class="bajoran-text">
+            <span class="speaker">Shakaar:</span> "Effective immediately, I am suspending Bajor's petition
+            to join the Federation. We cannot be part of an organization that would do this to us. That
+            would take everything we held sacred and destroy it without even the courtesy of asking our
+            permission. The Prophets guided us through the Occupation. They gave us hope when we had
+            nothing else. And now they are gone. Taken from us. Not by the Cardassians. Not by the Dominion.
+            But by the very people we thought were our friends."
+        </div>
+
+        <p class="story-text">
+            The transmission ended. And across Bajor, a world mourned the death of its gods and the
+            betrayal of its allies.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text" style="text-align: center; font-style: italic; color: #9090b0;">
+            To be continued...
+        </p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('sacrificeCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // The wormhole being destroyed
+        class WormholeCollapse {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.particles = [];
+                this.shards = [];
+                this.integrity = 1.0;
+                this.corruptionPhase = 0;
+
+                // Create initial stable structure
+                for (let i = 0; i < 8; i++) {
+                    const angle = (i / 8) * Math.PI * 2;
+                    this.shards.push({
+                        angle: angle,
+                        distance: 80,
+                        speed: 0,
+                        active: true
+                    });
+                }
+            }
+
+            update(time) {
+                this.corruptionPhase = time * 0.03;
+                this.integrity = Math.max(0, 1.0 - (time * 0.001));
+
+                // Update shards - they fly apart as integrity fails
+                this.shards.forEach(shard => {
+                    if (shard.active) {
+                        shard.speed += 0.02;
+                        shard.distance += shard.speed;
+                        shard.angle += (Math.random() - 0.5) * 0.1;
+
+                        if (shard.distance > 300) {
+                            shard.active = false;
+                        }
+                    }
+                });
+
+                // Spawn corruption particles
+                if (Math.random() > 0.7) {
+                    const angle = Math.random() * Math.PI * 2;
+                    const distance = Math.random() * 100;
+                    this.particles.push({
+                        x: this.x + Math.cos(angle) * distance,
+                        y: this.y + Math.sin(angle) * distance,
+                        vx: (Math.random() - 0.5) * 3,
+                        vy: (Math.random() - 0.5) * 3,
+                        life: 60,
+                        maxLife: 60,
+                        size: 1 + Math.random() * 2
+                    });
+                }
+
+                // Update particles
+                this.particles = this.particles.filter(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.life--;
+                    return p.life > 0;
+                });
+            }
+
+            draw(ctx) {
+                // Draw corrupted core
+                const coreRadius = 60 * this.integrity;
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, coreRadius);
+
+                const corruptionAmount = 1 - this.integrity;
+                const r = 138 + (255 - 138) * corruptionAmount;
+                const g = 43 + (0 - 43) * corruptionAmount;
+                const b = 226 + (0 - 226) * corruptionAmount;
+
+                gradient.addColorStop(0, `rgba(${r}, ${g}, ${b}, ${this.integrity * 0.8})`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, coreRadius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Draw fragmenting shards
+                this.shards.forEach(shard => {
+                    if (shard.active) {
+                        const x = this.x + Math.cos(shard.angle) * shard.distance;
+                        const y = this.y + Math.sin(shard.angle) * shard.distance;
+
+                        ctx.save();
+                        ctx.translate(x, y);
+                        ctx.rotate(shard.angle);
+
+                        const alpha = 1 - (shard.distance / 300);
+                        ctx.strokeStyle = `rgba(138, 43, 226, ${alpha})`;
+                        ctx.lineWidth = 3;
+                        ctx.beginPath();
+                        ctx.moveTo(-10, 0);
+                        ctx.lineTo(10, 0);
+                        ctx.stroke();
+
+                        ctx.restore();
+                    }
+                });
+
+                // Draw corruption particles
+                this.particles.forEach(p => {
+                    const alpha = p.life / p.maxLife;
+                    ctx.beginPath();
+                    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(255, 0, 0, ${alpha * 0.8})`;
+                    ctx.fill();
+                });
+
+                // Draw glitching effect
+                if (this.integrity < 0.5 && Math.random() > 0.8) {
+                    ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random() * 0.5})`;
+                    ctx.lineWidth = 1;
+                    ctx.beginPath();
+                    ctx.moveTo(this.x - 100, this.y + (Math.random() - 0.5) * 100);
+                    ctx.lineTo(this.x + 100, this.y + (Math.random() - 0.5) * 100);
+                    ctx.stroke();
+                }
+            }
+        }
+
+        // Dominion ships entering the wormhole
+        class DominionStream {
+            constructor(startX, startY, wormholeX, wormholeY) {
+                this.startX = startX;
+                this.startY = startY;
+                this.wormholeX = wormholeX;
+                this.wormholeY = wormholeY;
+                this.ships = [];
+                this.spawnTimer = 0;
+            }
+
+            update() {
+                this.spawnTimer++;
+
+                // Spawn ships
+                if (this.spawnTimer > 3) {
+                    this.spawnTimer = 0;
+                    this.ships.push({
+                        progress: 0,
+                        speed: 0.01 + Math.random() * 0.01,
+                        size: 3 + Math.random() * 2
+                    });
+                }
+
+                // Update ships
+                this.ships = this.ships.filter(ship => {
+                    ship.progress += ship.speed;
+                    return ship.progress < 1;
+                });
+            }
+
+            draw(ctx) {
+                // Draw stream line
+                ctx.strokeStyle = 'rgba(139, 69, 19, 0.3)';
+                ctx.lineWidth = 2;
+                ctx.beginPath();
+                ctx.moveTo(this.startX, this.startY);
+                ctx.lineTo(this.wormholeX, this.wormholeY);
+                ctx.stroke();
+
+                // Draw ships along stream
+                this.ships.forEach(ship => {
+                    const x = this.startX + (this.wormholeX - this.startX) * ship.progress;
+                    const y = this.startY + (this.wormholeY - this.startY) * ship.progress;
+
+                    ctx.fillStyle = `rgba(139, 69, 19, ${1 - ship.progress})`;
+                    ctx.beginPath();
+                    ctx.arc(x, y, ship.size, 0, Math.PI * 2);
+                    ctx.fill();
+                });
+            }
+        }
+
+        // The entity watching
+        class EntityWitness {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.grief = 0;
+            }
+
+            update(time) {
+                this.grief = (Math.sin(time * 0.05) + 1) / 2;
+            }
+
+            draw(ctx) {
+                const radius = 40 + this.grief * 10;
+                const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, radius);
+                gradient.addColorStop(0, `rgba(255, 215, 0, ${0.7 - this.grief * 0.3})`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Dimming core showing regret
+                ctx.fillStyle = `rgba(255, 255, 255, ${0.5 - this.grief * 0.3})`;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, 8, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        // Initialize scene
+        const wormhole = new WormholeCollapse(canvas.width * 0.7, canvas.height / 2);
+        const stream = new DominionStream(canvas.width * 0.2, canvas.height / 2, wormhole.x, wormhole.y);
+        const entity = new EntityWitness(canvas.width * 0.2, canvas.height / 2);
+
+        let time = 0;
+
+        function animate() {
+            time++;
+
+            // Clear with fade
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw
+            stream.update();
+            wormhole.update(time);
+            entity.update(time);
+
+            stream.draw(ctx);
+            wormhole.draw(ctx);
+            entity.draw(ctx);
+
+            // Draw labels
+            ctx.font = '14px Georgia';
+            ctx.textAlign = 'center';
+
+            ctx.fillStyle = `rgba(138, 43, 226, ${wormhole.integrity})`;
+            ctx.fillText('Celestial Temple', wormhole.x, wormhole.y + 100);
+
+            ctx.fillStyle = 'rgba(180, 180, 200, 0.6)';
+            ctx.font = '12px Georgia';
+            const integrityPercent = Math.floor(wormhole.integrity * 100);
+            ctx.fillText(`Integrity: ${integrityPercent}%`, wormhole.x, wormhole.y + 120);
+
+            if (wormhole.integrity < 0.1) {
+                ctx.font = '16px Georgia';
+                ctx.fillStyle = 'rgba(255, 0, 0, 0.8)';
+                ctx.fillText('PROPHETS DESTROYED', wormhole.x, wormhole.y + 140);
+            }
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+            wormhole.x = canvas.width * 0.7;
+            wormhole.y = canvas.height / 2;
+            stream.wormholeX = wormhole.x;
+            stream.wormholeY = wormhole.y;
+            stream.startX = canvas.width * 0.2;
+            stream.startY = canvas.height / 2;
+            entity.x = canvas.width * 0.2;
+            entity.y = canvas.height / 2;
+        });
+    </script>
+</body>
+</html>

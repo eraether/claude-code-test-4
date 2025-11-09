@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 04: The Choice - Picard Anomaly Chronicles</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #e0e0ff;
+            font-family: 'Georgia', serif;
+            overflow-x: hidden;
+        }
+
+        .header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(180deg, rgba(10, 10, 26, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+            position: relative;
+            z-index: 10;
+        }
+
+        .chapter-number {
+            font-size: 0.9rem;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #8a2be2, #ffd700, #ff4444);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: #4a9eff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: opacity 0.3s;
+        }
+
+        .back-link:hover {
+            opacity: 0.7;
+        }
+
+        #choiceCanvas {
+            width: 100%;
+            height: 60vh;
+            display: block;
+            background: radial-gradient(ellipse at center, rgba(46, 10, 26, 0.5) 0%, rgba(0, 0, 0, 1) 100%);
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 2rem 4rem;
+            line-height: 1.8;
+        }
+
+        .story-text {
+            font-size: 1.1rem;
+            color: #d0d0e0;
+            margin-bottom: 1.5rem;
+            text-align: justify;
+            text-indent: 2rem;
+        }
+
+        .dialogue {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+            border-left: 3px solid rgba(74, 158, 255, 0.3);
+            font-style: italic;
+        }
+
+        .speaker {
+            font-weight: bold;
+            color: #ffd700;
+            font-style: normal;
+        }
+
+        .stardate {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #9090b0;
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .section-break {
+            text-align: center;
+            margin: 2rem 0;
+            color: #4a9eff;
+            font-size: 1.5rem;
+        }
+
+        .computer-text {
+            font-family: 'Courier New', monospace;
+            background: rgba(255, 68, 68, 0.1);
+            padding: 1rem;
+            border-left: 3px solid #ff4444;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+            color: #ff6b9d;
+        }
+
+        .emphasis {
+            font-weight: bold;
+            color: #ffd700;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <a href="../index.html" class="back-link">← Back to Chronicles</a>
+        <div class="chapter-number">CHAPTER 04</div>
+        <h1>The Choice</h1>
+    </div>
+
+    <canvas id="choiceCanvas"></canvas>
+
+    <div class="content">
+        <div class="stardate">Stardate 47635.2 - 32 minutes until fleet emergence</div>
+
+        <p class="story-text">
+            Data's eyes snapped open, his connection with the entity surging with a flood of information
+            that made his positronic matrix strain at its processing limits. What he saw made him go
+            absolutely still.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, I need to revise my analysis. The approaching
+            vessels are not—" He paused, recalculating. "They are not an active Dominion strike force."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "Sensors are detecting three Jem'Hadar attack ships and
+            what appears to be a heavy cruiser. How are they not a strike force?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Because, Lieutenant, they are the ships that no longer
+            exist. The entity is showing me their quantum signature—it matches the theoretical profile
+            of the Dominion fleet that the Prophets removed from the timeline during the Battle of
+            Cardassia. These vessels have been trapped outside linear time for what, from their
+            perspective, may have been an eternity."
+        </div>
+
+        <p class="story-text">
+            The words hung in the air like a death sentence. Picard stood slowly, his mind racing through
+            the implications. The Prophets had removed over 2,800 Dominion ships from existence—ships that
+            would have turned the tide of the war decisively against the Federation. And now, four of them
+            were bleeding back into reality.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "Four ships we could handle. But if they're finding a way
+            back, if the others follow—"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Commander, the entity knows how to guide them out. It
+            experienced the same temporal displacement when it passed through the wormhole. It understands
+            the path back to linear existence. And Captain—" His voice carried something that might have
+            been anguish. "It wants to help them."
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            Through the viewscreen, they could see the anomaly changing. The beautiful, curious swirls of
+            color were becoming more focused, more purposeful. Tendrils of energy reached out toward the
+            subspace distortions where the Dominion ships were trying to emerge, like a lighthouse beacon
+            guiding lost vessels home.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Troi:</span> "I'm sensing something from the entity. Compassion. It
+            knows those ships are suffering—trapped between moments, experiencing existence and
+            non-existence simultaneously. It wants to end their pain."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Mr. Data, can you communicate with it? We need to make
+            it understand what will happen if it succeeds."
+        </div>
+
+        <p class="story-text">
+            Data closed his eyes again, deepening the connection. When he spoke, his voice had that
+            harmonic quality from before—multiple frequencies speaking in unison. The entity was listening
+            through him.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "I know you want to help them. That instinct does you
+            credit—it shows how far you've come from your original programming. But you must understand
+            the consequences. Those ships were removed from our timeline for a reason. If they return,
+            thousands of people will die. Worlds will fall. The war we fought so hard to survive will
+            begin again."
+        </div>
+
+        <p class="story-text">
+            Through Data, the entity's response came—not in words exactly, but in concepts that Data
+            translated into language the crew could understand.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "It says: 'You taught me that conscious beings have the
+            right to self-determination. The right to exist. Those ships contain thousands of conscious
+            beings—Vorta, Jem'Hadar, Founders. They are trapped, suffering, experiencing a form of
+            existence worse than death. By your own principles, do they not have the right to be saved?'"
+        </div>
+
+        <p class="story-text">
+            The question hit Picard like a physical blow. He had spent hours teaching the entity about
+            the value of consciousness, about the right to choose one's own path. And now it was using
+            those very principles against him.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Crusher:</span> "But they didn't choose this fate. The Prophets acted
+            to save billions of lives."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data (entity):</span> "And I did not choose to be created as a weapon.
+            Yet you argued I have the right to become something else. Why do they not have the same right?"
+        </div>
+
+        <p class="story-text">
+            Silence fell across the bridge. Even Worf, who had lost more than most to the Dominion, seemed
+            troubled. The entity had found the fundamental contradiction in their argument.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Riker:</span> "It's not the same thing. You're one consciousness learning
+            to be better. They're a military force designed for conquest."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data (entity):</span> "I was designed for reconnaissance and infiltration.
+            Does intent of design matter more than capacity to suffer? They are in pain. I can end it. Is
+            that not the compassionate choice?"
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            In his ready room, Picard stood before the window, staring at the anomaly as it continued its
+            work. Data sat across from him, the connection temporarily reduced to a background whisper.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "It's right, isn't it? We did teach it to value conscious
+            life. And now we're asking it to condemn thousands of beings to eternal suffering for the
+            greater good."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "The needs of the many outweigh the needs of the few, sir.
+            It is a logical principle."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Logic. Yes. But we're not dealing with logic here, are
+            we? We're dealing with morality. With the question of whether some lives are worth less than
+            others based on who they serve."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, I should inform you of something else the entity
+            has shared with me. The Jem'Hadar in those ships—many of them were bred specifically for that
+            battle. They have never known anything but war and obedience. If they return to linear time,
+            they will continue to fight because that is all they know. But—" He paused. "They did not
+            choose to be created as soldiers any more than the entity chose to be created as a spy."
+        </div>
+
+        <p class="story-text">
+            Picard closed his eyes. There it was—the impossible question. How do you weigh suffering
+            against potential harm? How do you decide which conscious beings deserve salvation and which
+            deserve abandonment?
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "What does the entity want from us, Data? Why is it
+            asking these questions instead of simply acting?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Because it has learned something that its original
+            programming never contained: doubt. It is uncertain whether helping them is the right thing
+            to do. It wants us to help it choose. But Captain, it also believes that if we ask it to
+            abandon those ships, we will be asking it to betray the very principles we taught it."
+        </div>
+
+        <div class="computer-text">
+            ALERT: TEMPORAL INCURSION IN PROGRESS<br>
+            FIRST DOMINION VESSEL 73% MATERIALIZED<br>
+            ESTIMATED FULL EMERGENCE: 18 MINUTES<br>
+            WEAPONS SYSTEMS DETECTED: ACTIVE
+        </div>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text">
+            Back on the bridge, the senior staff had gathered in an uneasy circle. Outside, the first
+            Jem'Hadar attack ship was becoming more solid, phasing in and out of reality like a ghost
+            trying to remember how to haunt.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Geordi:</span> "I've been running simulations. If those ships fully
+            materialize and the entity guides the rest of the fleet back, we're looking at 2,800 vessels
+            appearing across this sector. Even if Starfleet scrambles every available ship, we can't
+            contain that."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "Then we must stop the entity. Destroy it before it can
+            complete the process."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Troi:</span> "We'd be killing a conscious being for trying to show
+            mercy to others."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "We would be preventing a catastrophe. Sometimes difficult
+            choices must be made."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Crusher:</span> "But the entity learned compassion from us. From Data.
+            If we destroy it for acting on what we taught it, what does that make us?"
+        </div>
+
+        <p class="story-text">
+            Picard listened to his crew debate, each voice representing a different facet of the impossible
+            choice before them. The utilitarian argument. The moral principle. The practical reality. All
+            valid. All insufficient.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Mr. Data, ask the entity a question for me. Ask it:
+            if it saves those ships, if it guides 2,800 Dominion vessels back to our reality, can it
+            live with the consequences of what they will do?"
+        </div>
+
+        <p class="story-text">
+            Data closed his eyes. The bridge fell silent except for the steady beep of sensors tracking
+            the materializing ships. When Data opened his eyes again, there was something profound in
+            his expression.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "It says... it says it does not know. That is what makes
+            it a choice. If the answer were obvious, there would be no moral weight to the decision. It
+            asks: can WE live with the consequences of condemning thousands of conscious beings to eternal
+            suffering to prevent harm they have not yet committed?"
+        </div>
+
+        <p class="story-text">
+            Outside, the first Jem'Hadar ship was nearly solid now. Its weapons ports were glowing with
+            building charge. On the viewscreen, Data could see more distortions forming—ten, twenty, fifty.
+            The fleet was coming. And somewhere in the space between them and oblivion, an entity that had
+            learned to question was waiting for an answer it might not accept.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Mr. Worf, what is the status of that lead ship's weapons?"
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Worf:</span> "Charging, Captain. They will be ready to fire in less than
+            three minutes."
+        </div>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "And it will fire. Not because it's evil. Not because it
+            wants to. But because that's what it was designed to do. That's all it knows."
+        </div>
+
+        <p class="story-text">
+            He turned to Data, and in that moment, the weight of command had never felt heavier.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Tell the entity that compassion without wisdom is not
+            virtue—it's abdication. That saving a life that will take countless others is not mercy—it's
+            complicity. Tell it that the right to exist is sacred, but so is the responsibility to prevent
+            suffering when we have the power to do so. And tell it—" His voice caught. "Tell it that some
+            choices have no right answer. Only consequences we must be willing to bear."
+        </p>
+
+        <p class="story-text">
+            Through the link, Data felt the entity processing this. Not just the words, but the anguish
+            behind them. Picard was asking it to make the hardest choice a conscious being could make:
+            to abandon those who suffer because saving them would cause greater suffering still.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Data:</span> "Captain, it is asking... it wants to know what you would
+            do. If you were the one trapped outside time, suffering endlessly, would you want someone to
+            save you? Even knowing what you might do once saved?"
+        </div>
+
+        <p class="story-text">
+            Jean-Luc Picard, who had faced the Borg, who had lived a lifetime in twenty-five minutes,
+            who had wrestled with more moral paradoxes than most beings experienced in ten lifetimes,
+            felt something break inside him. Because the answer was obvious. And terrible.
+        </p>
+
+        <div class="dialogue">
+            <span class="speaker">Picard:</span> "Yes. God help me, yes. I would want to be saved. But that
+            doesn't mean it would be right to save me."
+        </div>
+
+        <p class="story-text">
+            The anomaly pulsed. The tendrils of energy reaching toward the Dominion ships wavered,
+            uncertain. And Data felt, through their connection, something he had sought his entire
+            existence and never quite grasped: the weight of a truly impossible choice.
+        </p>
+
+        <div class="section-break">* * *</div>
+
+        <p class="story-text" style="text-align: center; font-style: italic; color: #9090b0;">
+            To be continued...
+        </p>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('choiceCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Dominion ships phasing into reality
+        class Ship {
+            constructor(x, y, size) {
+                this.x = x;
+                this.y = y;
+                this.size = size;
+                this.opacity = 0;
+                this.phaseSpeed = 0.002 + Math.random() * 0.003;
+                this.phaseOffset = Math.random() * Math.PI * 2;
+                this.glitchAmount = 0;
+                this.targetOpacity = 0.8;
+            }
+
+            update(time) {
+                // Gradually materializing
+                const phase = Math.sin(time * this.phaseSpeed + this.phaseOffset);
+                this.opacity = ((phase + 1) / 2) * this.targetOpacity;
+
+                // Random glitching
+                if (Math.random() > 0.98) {
+                    this.glitchAmount = Math.random() * 20;
+                } else {
+                    this.glitchAmount *= 0.8;
+                }
+            }
+
+            draw(ctx) {
+                const displayX = this.x + (Math.random() - 0.5) * this.glitchAmount;
+                const displayY = this.y + (Math.random() - 0.5) * this.glitchAmount;
+
+                // Ship hull - angular Dominion design
+                ctx.save();
+                ctx.globalAlpha = this.opacity;
+                ctx.translate(displayX, displayY);
+
+                // Main body
+                ctx.beginPath();
+                ctx.moveTo(0, -this.size);
+                ctx.lineTo(this.size * 0.6, this.size * 0.3);
+                ctx.lineTo(this.size * 0.3, this.size);
+                ctx.lineTo(-this.size * 0.3, this.size);
+                ctx.lineTo(-this.size * 0.6, this.size * 0.3);
+                ctx.closePath();
+
+                const gradient = ctx.createLinearGradient(0, -this.size, 0, this.size);
+                gradient.addColorStop(0, 'rgba(139, 69, 19, 0.8)');
+                gradient.addColorStop(0.5, 'rgba(160, 82, 45, 0.9)');
+                gradient.addColorStop(1, 'rgba(101, 67, 33, 0.7)');
+
+                ctx.fillStyle = gradient;
+                ctx.fill();
+
+                // Weapon ports (glowing)
+                ctx.fillStyle = `rgba(255, 100, 0, ${this.opacity})`;
+                ctx.beginPath();
+                ctx.arc(this.size * 0.4, this.size * 0.5, 2, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.beginPath();
+                ctx.arc(-this.size * 0.4, this.size * 0.5, 2, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Temporal distortion outline
+                ctx.strokeStyle = `rgba(138, 43, 226, ${this.opacity * 0.5})`;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                ctx.restore();
+            }
+        }
+
+        // The entity's guidance tendrils
+        class GuidanceTendril {
+            constructor(startX, startY, targetShip) {
+                this.startX = startX;
+                this.startY = startY;
+                this.targetShip = targetShip;
+                this.particles = [];
+                this.active = true;
+                this.pulsePhase = Math.random() * Math.PI * 2;
+            }
+
+            update(time) {
+                this.pulsePhase = time * 0.05;
+
+                // Spawn particles along tendril
+                if (Math.random() > 0.7 && this.active) {
+                    this.particles.push({
+                        progress: 0,
+                        speed: 0.01 + Math.random() * 0.01,
+                        size: 1 + Math.random() * 2
+                    });
+                }
+
+                // Update particles
+                this.particles = this.particles.filter(p => {
+                    p.progress += p.speed;
+                    return p.progress < 1;
+                });
+            }
+
+            draw(ctx) {
+                if (!this.active) return;
+
+                const pulse = (Math.sin(this.pulsePhase) + 1) / 2;
+
+                // Draw main tendril line
+                ctx.beginPath();
+                ctx.moveTo(this.startX, this.startY);
+
+                // Curved path to ship
+                const midX = (this.startX + this.targetShip.x) / 2;
+                const midY = (this.startY + this.targetShip.y) / 2 - 50;
+
+                ctx.quadraticCurveTo(midX, midY, this.targetShip.x, this.targetShip.y);
+
+                const gradient = ctx.createLinearGradient(
+                    this.startX, this.startY,
+                    this.targetShip.x, this.targetShip.y
+                );
+                gradient.addColorStop(0, `rgba(138, 43, 226, ${pulse * 0.4})`);
+                gradient.addColorStop(1, `rgba(255, 100, 0, ${pulse * 0.3})`);
+
+                ctx.strokeStyle = gradient;
+                ctx.lineWidth = 2;
+                ctx.stroke();
+
+                // Draw particles traveling along tendril
+                this.particles.forEach(p => {
+                    const t = p.progress;
+                    // Quadratic bezier calculation
+                    const x = Math.pow(1-t, 2) * this.startX +
+                             2 * (1-t) * t * midX +
+                             Math.pow(t, 2) * this.targetShip.x;
+                    const y = Math.pow(1-t, 2) * this.startY +
+                             2 * (1-t) * t * midY +
+                             Math.pow(t, 2) * this.targetShip.y;
+
+                    ctx.beginPath();
+                    ctx.arc(x, y, p.size, 0, Math.PI * 2);
+                    ctx.fillStyle = `rgba(138, 43, 226, ${1 - t})`;
+                    ctx.fill();
+                });
+            }
+
+            setActive(active) {
+                this.active = active;
+            }
+        }
+
+        // Temporal distortion effects
+        class TemporalRift {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.radius = 20 + Math.random() * 30;
+                this.rotation = Math.random() * Math.PI * 2;
+                this.rotationSpeed = (Math.random() - 0.5) * 0.02;
+                this.intensity = 0.5 + Math.random() * 0.5;
+            }
+
+            update() {
+                this.rotation += this.rotationSpeed;
+            }
+
+            draw(ctx) {
+                ctx.save();
+                ctx.translate(this.x, this.y);
+                ctx.rotate(this.rotation);
+
+                // Swirling distortion
+                const gradient = ctx.createRadialGradient(0, 0, 0, 0, 0, this.radius);
+                gradient.addColorStop(0, `rgba(138, 43, 226, ${this.intensity * 0.3})`);
+                gradient.addColorStop(0.5, `rgba(74, 158, 255, ${this.intensity * 0.2})`);
+                gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+
+                ctx.fillStyle = gradient;
+                ctx.beginPath();
+                ctx.arc(0, 0, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+
+                // Distortion rings
+                ctx.strokeStyle = `rgba(138, 43, 226, ${this.intensity * 0.4})`;
+                ctx.lineWidth = 1;
+                ctx.beginPath();
+                ctx.arc(0, 0, this.radius * 0.7, 0, Math.PI * 2);
+                ctx.stroke();
+
+                ctx.restore();
+            }
+        }
+
+        // Initialize scene
+        const ships = [];
+        const tendrils = [];
+        const rifts = [];
+        let time = 0;
+
+        // Create Dominion ships
+        const shipCount = 4;
+        for (let i = 0; i < shipCount; i++) {
+            const angle = (i / shipCount) * Math.PI * 2;
+            const distance = 150 + Math.random() * 100;
+            const x = canvas.width * 0.7 + Math.cos(angle) * distance;
+            const y = canvas.height / 2 + Math.sin(angle) * distance;
+            const size = 15 + Math.random() * 10;
+            ships.push(new Ship(x, y, size));
+        }
+
+        // Create guidance tendrils from entity to ships
+        ships.forEach(ship => {
+            tendrils.push(new GuidanceTendril(canvas.width * 0.3, canvas.height / 2, ship));
+        });
+
+        // Create temporal rifts
+        for (let i = 0; i < 15; i++) {
+            rifts.push(new TemporalRift(
+                Math.random() * canvas.width,
+                Math.random() * canvas.height
+            ));
+        }
+
+        function animate() {
+            time++;
+
+            // Clear with fade
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.12)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw temporal rifts
+            rifts.forEach(rift => {
+                rift.update();
+                rift.draw(ctx);
+            });
+
+            // Draw the entity (pulsing mass of energy)
+            const entityX = canvas.width * 0.3;
+            const entityY = canvas.height / 2;
+            const entityPulse = (Math.sin(time * 0.03) + 1) / 2;
+            const entityRadius = 40 + entityPulse * 20;
+
+            const entityGradient = ctx.createRadialGradient(
+                entityX, entityY, 0,
+                entityX, entityY, entityRadius
+            );
+            entityGradient.addColorStop(0, `rgba(138, 43, 226, ${0.8})`);
+            entityGradient.addColorStop(0.5, `rgba(74, 158, 255, ${0.5})`);
+            entityGradient.addColorStop(1, 'rgba(138, 43, 226, 0)');
+
+            ctx.fillStyle = entityGradient;
+            ctx.beginPath();
+            ctx.arc(entityX, entityY, entityRadius, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Draw core
+            ctx.fillStyle = `rgba(255, 215, 0, ${0.6 + entityPulse * 0.3})`;
+            ctx.beginPath();
+            ctx.arc(entityX, entityY, 8, 0, Math.PI * 2);
+            ctx.fill();
+
+            // Update and draw guidance tendrils
+            tendrils.forEach(tendril => {
+                tendril.update(time);
+                tendril.draw(ctx);
+            });
+
+            // Update and draw ships
+            ships.forEach(ship => {
+                ship.update(time);
+                ship.draw(ctx);
+            });
+
+            // Draw "choice moment" effect - wavering between helping and not
+            const choiceWaver = Math.sin(time * 0.04);
+            const waveAlpha = Math.abs(choiceWaver) * 0.3;
+
+            ctx.fillStyle = choiceWaver > 0
+                ? `rgba(138, 43, 226, ${waveAlpha})` // Entity reaching out
+                : `rgba(255, 68, 68, ${waveAlpha})`; // Pulling back
+
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            requestAnimationFrame(animate);
+        }
+
+        animate();
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            resizeCanvas();
+        });
+    </script>
+</body>
+</html>
